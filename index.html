@@ -21,9 +21,10 @@
 <body>
   <!-- header with title and date -->
   <header class="jumbotron">
-    <h1 class="display-3">Work Day Scheduler</h1>
+    <h1 class="display-3">Work Day Planner</h1>
     <p class="description lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
+    <button type="button" id="resetBtn" class="btn btn-outline-success">Clear Planner</button>
   </header>
 
   <!-- Timeblocks go in here -->
@@ -112,6 +113,16 @@
     <div id="hour17" class="row time-block">
       <!-- time -->
       <div class="col-2 hour">5pm</div>
+      <!-- task -->
+      <textarea id="task3" class="col-9 js-task"></textarea>
+      <!-- save button -->
+      <button class="btn col-1 saveBtn js-saveBtn"><i class="far fa-save"></i></button>
+    </div>
+
+    <!-- hour 10 -->
+    <div id="hour18" class="row time-block">
+      <!-- time -->
+      <div class="col-2 hour">6pm</div>
       <!-- task -->
       <textarea id="task3" class="col-9 js-task"></textarea>
       <!-- save button -->

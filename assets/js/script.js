@@ -22,15 +22,24 @@ function timeColors() {
     // if current TOD is less than calendar time change color to #CCCCCC
     if (parseInt($(this).parent().attr("id").slice(4)) < timeNow) {
       $(this).addClass("past");
-      // if current time is equal to calendar time, change color to #FFE485
-    } else if (parseInt($(this).parent().attr("id").slice(4)) === timeNow) {
-      $("this").addClass("present");
-      console.log(parseInt($(this).parent().attr("id").slice(4)));
-      // for other times (future), change color to #85FFE0
-    } else {
-      $("this").addClass("future");
+      console.log("past");
+    }
+    // if current time is equal to calendar time, change color to #FFE485
+    if (parseInt($(this).parent().attr("id").slice(4)) === timeNow) {
+      $(this).addClass("present");
+      console.log("present");
+    }
+    // for other times (future), change color to #85FFE0
+    if (parseInt($(this).parent().attr("id").slice(4)) > timeNow) {
+      $(this).addClass("future");
+      console.log("future");
     }
   });
+}
+
+function resetSchedule() {
+  localStorage.clear();
+  location.reload();
 }
 
 // event listeners
@@ -47,9 +56,13 @@ $("#hour14 .js-task").val(localStorage.getItem("hour14"));
 $("#hour15 .js-task").val(localStorage.getItem("hour15"));
 $("#hour16 .js-task").val(localStorage.getItem("hour16"));
 $("#hour17 .js-task").val(localStorage.getItem("hour17"));
+$("#hour18 .js-task").val(localStorage.getItem("hour18"));
 
 // user clicks save button
 $(".js-saveBtn").on("click", saveTask);
 
-// call functions
+// user clicks 'reset schedule' button
+$("#resetBtn").on("click", resetSchedule);
+
+// call function to change timeblock colors
 timeColors();
