@@ -48,13 +48,13 @@ textarea {
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  background-color: #ffe485;
+  color: black;
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
+  background-color: #85ffe0;
+  color: black;
 }
 
 .saveBtn {

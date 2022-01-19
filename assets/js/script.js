@@ -14,24 +14,21 @@ function saveTask() {
 // change scheudle time block colors based on current time
 function timeColors() {
   const timeNow = moment().hours();
-  // console.log(timeNow);
+
   // loop through task lists
   // for (var i = 0; i <= taskTimes.length; i++)
   $(".js-task").each(function () {
     // compare times
     // if current TOD is less than calendar time change color to #CCCCCC
-    // console.log(parseInt($(this).parent().attr("id").slice(4)));
     if (parseInt($(this).parent().attr("id").slice(4)) < timeNow) {
-      $(this).addClass("present");
-      // $(".past").css("background-color", "#CCCCCC");
-      // if current TOD is equal to calendar time, change color to #FFE485
+      $(this).addClass("past");
+      // if current time is equal to calendar time, change color to #FFE485
     } else if (parseInt($(this).parent().attr("id").slice(4)) === timeNow) {
       $("this").addClass("present");
-      // $(".present").css("background-color", "#FFE485");
-      // if current TOD is greater than calendar time, change color to #85FFE0
+      console.log(parseInt($(this).parent().attr("id").slice(4)));
+      // for other times (future), change color to #85FFE0
     } else {
       $("this").addClass("future");
-      // $(".future").css("background-color", "#85FFE0");
     }
   });
 }
@@ -41,11 +38,18 @@ function timeColors() {
 $("#currentDay").text(moment().format("MMMM Do, YYYY"));
 
 // retrieve tasks from local storage
-$("#hour9 .js-task").val(localStorage.getItem("hour9"));
+$("#hour09 .js-task").val(localStorage.getItem("hour09"));
 $("#hour10 .js-task").val(localStorage.getItem("hour10"));
 $("#hour11 .js-task").val(localStorage.getItem("hour11"));
+$("#hour12 .js-task").val(localStorage.getItem("hour12"));
+$("#hour13 .js-task").val(localStorage.getItem("hour13"));
+$("#hour14 .js-task").val(localStorage.getItem("hour14"));
+$("#hour15 .js-task").val(localStorage.getItem("hour15"));
+$("#hour16 .js-task").val(localStorage.getItem("hour16"));
+$("#hour17 .js-task").val(localStorage.getItem("hour17"));
 
 // user clicks save button
 $(".js-saveBtn").on("click", saveTask);
 
+// call functions
 timeColors();
