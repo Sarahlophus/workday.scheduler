@@ -35,6 +35,7 @@ function timeColors() {
   });
 }
 
+// reset planner schedule
 function resetSchedule() {
   localStorage.clear();
   location.reload();
