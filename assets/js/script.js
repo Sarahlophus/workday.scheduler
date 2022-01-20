@@ -1,5 +1,3 @@
-// global variables
-
 // functions
 // save tasks to local storage
 function saveTask() {
