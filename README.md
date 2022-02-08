@@ -20,6 +20,15 @@ Workday Scheduler uses third-party APIs:
 
 ![workday scheduler demo](./assets/images/workday-scheduler.gif)
 
+## Technologies and Resources
+
+- HTML
+- CSS
+- Bootstrap (styling)
+- Moment (date formatter)
+- JQuery (JavaScript)
+- Google Fonts
+
 ## Links for repo and live page
 
 - Github repository: https://github.com/Sarahlophus/workday.scheduler
